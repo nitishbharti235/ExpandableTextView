@@ -7,6 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Article {
+    @SerializedName("author_display")
+    @Expose
+    public List<String> Authors=null;
+
+    @SerializedName("article_type")
+    @Expose
+    public String ArticleType;
 
     @SerializedName("publication_date")
     @Expose
@@ -32,20 +39,12 @@ public class Article {
         return Abstract;
     }
 
-    public void setTitle(String title) {
-        Title = title;
+    public List<String> getAuthors() {
+        return Authors;
     }
 
-    public void setAbstract(List<String> anAbstract) {
-        Abstract = anAbstract;
-    }
-
-    public void setScore(float score) {
-        Score = score;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+    public String getArticleType() {
+        return ArticleType;
     }
 
     public float getScore() {
@@ -56,11 +55,13 @@ public class Article {
         return date;
     }
 
-    public Article(String title, List<String> anAbstract, float score, String date) {
+    public Article(List<String> Authors, String Atype ,String title, List<String> anAbstract, float score, String date) {
         Title = title;
         Abstract = anAbstract;
         Score = score;
         this.date = date;
+        this.Authors = Authors;
+        this.ArticleType=Atype;
     }
     public Article()
     {
@@ -68,5 +69,7 @@ public class Article {
         Abstract=new ArrayList<>();
         Score= (float) 0.0;
         date="";
+        Authors = new ArrayList<>();
+        ArticleType ="";
     }
 }

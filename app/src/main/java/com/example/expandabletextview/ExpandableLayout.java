@@ -146,7 +146,7 @@ public class ExpandableLayout extends LinearLayout {
             public void onAnimationUpdate(ValueAnimator animation) {
                 dy = (int) animation.getAnimatedValue() - lastDy;
                 lastDy = (int) animation.getAnimatedValue();
-                mViewParent.scrollBy(0, dy);
+                mViewParent.scrollBy(0, 0);
             }
         });
         mParentAnimator.setDuration(mExpandDuration);

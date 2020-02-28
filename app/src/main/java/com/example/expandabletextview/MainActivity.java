@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                     InitialApiBody initialApiBody = (InitialApiBody)response.body();
                     Responses responses1 = (Responses) initialApiBody.getResponse();
                     List<Article> docs = responses1.getDocs();
+                    Log.d("type:", docs.get(0).getArticleType());
                     recyclerViewAdapter.setArticleList(docs);
-
                     Log.d("hello", String.valueOf(articles.size()));
                 }
                 else
